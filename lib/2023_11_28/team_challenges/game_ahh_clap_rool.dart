@@ -42,7 +42,7 @@ class AhhClapRool {
       cntRool++;
       return 'Rool';
     } else {
-      return n.toString();
+      return '$n';
     }
   }
 }
