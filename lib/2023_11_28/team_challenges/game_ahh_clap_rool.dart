@@ -27,7 +27,7 @@ class AhhClapRool {
     return n % 10 == 0 ? true : false;
   }
 
-  String getOutput(int n, Player player) {
+  String playGame(int n, Player player) {
     if (checkAhh(n)) {
       // 우선 순위 1
       cntAhh++;
@@ -62,7 +62,7 @@ void main() {
     Player currentPlayer = players[(i - 1) % players.length];
 
     // output 출력
-    print('${currentPlayer.name}: ${ahhClapRool.getOutput(i, currentPlayer)}');
+    print('${currentPlayer.name}: ${ahhClapRool.playGame(i, currentPlayer)}');
   }
   // 게임 끝
 
