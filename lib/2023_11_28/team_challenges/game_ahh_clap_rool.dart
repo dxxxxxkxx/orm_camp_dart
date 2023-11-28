@@ -48,17 +48,13 @@ class AhhClapRool {
 }
 
 void main() {
-  Player player1 = Player();
-  Player player2 = Player();
-  Player player3 = Player();
-  Player player4 = Player();
+  List<Player> players = [Player(), Player(), Player(), Player()];
 
-  player1.name = 'Player 1';
-  player2.name = 'Player 2';
-  player3.name = 'Player 3';
-  player4.name = 'Player 4';
+  players[0].name = 'Player 1';
+  players[1].name = 'Player 2';
+  players[2].name = 'Player 3';
+  players[3].name = 'Player 4';
 
-  List<Player> players = [player1, player2, player3, player4];
   AhhClapRool ahhClapRool = AhhClapRool();
 
   // 1 ~ 100
@@ -75,10 +71,9 @@ void main() {
   print('Rool: ${ahhClapRool.cntRool}');
 
   print('\n* player의 clap 갯수');
-  print('${player1.name}: ${player1.cntClap}');
-  print('${player2.name}: ${player2.cntClap}');
-  print('${player3.name}: ${player3.cntClap}');
-  print('${player4.name}: ${player4.cntClap}');
+  for (Player player in players) {
+    print('${player.name}: ${player.cntClap}');
+  }
 
   Player maxClapPlayer =
       players.reduce((a, b) => a.cntClap > b.cntClap ? a : b);
