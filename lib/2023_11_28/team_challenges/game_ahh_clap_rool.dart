@@ -57,13 +57,14 @@ void main() {
 
   AhhClapRool ahhClapRool = AhhClapRool();
 
-  // 1 ~ 100
+  // 게임 시작
   for (int i = 1; i <= 100; i++) {
     Player currentPlayer = players[(i - 1) % players.length];
 
-    // 현재 player 이름: output 출력
+    // output 출력
     print('${currentPlayer.name}: ${ahhClapRool.getOutput(i, currentPlayer)}');
   }
+  // 게임 끝
 
   print('\n* 총 갯수');
   print('Ahh: ${ahhClapRool.cntAhh}');
