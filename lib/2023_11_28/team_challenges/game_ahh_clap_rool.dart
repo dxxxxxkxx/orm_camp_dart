@@ -13,36 +13,36 @@ class AhhClapRool {
   int cntRool = 0;
 
   // 30의 배수 확인
-  bool checkAhh(int x) {
-    return x % 30 == 0 ? true : false;
+  bool checkAhh(int n) {
+    return n % 30 == 0 ? true : false;
   }
 
   // 3의 배수 확인
-  bool checkClap(int x) {
-    return x % 3 == 0 ? true : false;
+  bool checkClap(int n) {
+    return n % 3 == 0 ? true : false;
   }
 
   // 10의 배수 확인
-  bool checkRool(int x) {
-    return x % 10 == 0 ? true : false;
+  bool checkRool(int n) {
+    return n % 10 == 0 ? true : false;
   }
 
-  String getOutput(int x, Player player) {
-    if (checkAhh(x)) {
+  String getOutput(int n, Player player) {
+    if (checkAhh(n)) {
       // 우선 순위 1
       cntAhh++;
       return 'Ahh';
-    } else if (checkClap(x)) {
+    } else if (checkClap(n)) {
       // 우선 순위 2
       player.cntClap++;
       cntClap++;
       return 'Clap';
-    } else if (checkRool(x)) {
+    } else if (checkRool(n)) {
       // 우선 순위 3
       cntRool++;
       return 'Rool';
     } else {
-      return x.toString();
+      return n.toString();
     }
   }
 }
