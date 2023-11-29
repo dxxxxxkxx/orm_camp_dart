@@ -1,6 +1,8 @@
 class Player {
   String name = '';
   int cntClap = 0;
+
+  Player(this.name);
 }
 
 class AhhClapRool {
@@ -48,12 +50,12 @@ class AhhClapRool {
 }
 
 void main() {
-  List<Player> players = [Player(), Player(), Player(), Player()];
-
-  players[0].name = 'Player 1';
-  players[1].name = 'Player 2';
-  players[2].name = 'Player 3';
-  players[3].name = 'Player 4';
+  List<Player> players = [
+    Player('Player 1'),
+    Player('Player 2'),
+    Player('Player 3'),
+    Player('Player 4')
+  ];
 
   AhhClapRool ahhClapRool = AhhClapRool();
 
