@@ -1,6 +1,6 @@
 void main() {
-  int m = 1;
-  int n = 0;
+  int m = 30;
+  int n = 15;
 
   m %= 2;
   n %= 2;
