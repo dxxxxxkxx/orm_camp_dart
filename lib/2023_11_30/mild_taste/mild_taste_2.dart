@@ -6,9 +6,9 @@ void main() {
   n %= 2;
 
   /*
-  Caution: Dart supports short-circuit evaluation (lazy evaluation).
-  ex) if ((m == 0 && n == 1) || (m == 0 && n == 0)) {}
-      (m == 0 && n == 0) is not executed.
+   Caution: Dart supports short-circuit evaluation (lazy evaluation).
+   ex) if ((m == 0 && n == 1) || (m == 0 && n == 0)) {}
+       (m == 0 && n == 0) is not executed.
    */
 
   bool isChecked1 = false;
