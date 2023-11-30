@@ -79,6 +79,6 @@ void main() {
   }
 
   Player maxClapPlayer =
-      players.reduce((a, b) => a.cntClap > b.cntClap ? a : b);
+      players.reduce((prev, next) => prev.cntClap > next.cntClap ? prev : next);
   print('\n* 가장 많은 clap을 출력한 player: ${maxClapPlayer.name}');
 }
