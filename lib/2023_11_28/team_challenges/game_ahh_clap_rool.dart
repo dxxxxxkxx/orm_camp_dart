@@ -44,14 +44,14 @@ class AhhClapRool {
 }
 
 void main() {
-  List<Player> players = [
+  final List<Player> players = [
     Player('Player 1'),
     Player('Player 2'),
     Player('Player 3'),
     Player('Player 4')
   ];
 
-  AhhClapRool ahhClapRool = AhhClapRool();
+  final AhhClapRool ahhClapRool = AhhClapRool();
 
   // 게임 시작 (1 ~ 100)
   for (int i = 1; i <= 100; i++) {
@@ -68,11 +68,11 @@ void main() {
   print('Rool: ${ahhClapRool.cntRool}');
 
   print('\n* player의 clap 갯수');
-  for (Player player in players) {
+  for (final Player player in players) {
     print('${player.name}: ${player.cntClap}');
   }
 
-  Player maxClapPlayer =
+  final Player maxClapPlayer =
       players.reduce((prev, next) => prev.cntClap > next.cntClap ? prev : next);
   print('\n* 가장 많은 clap을 출력한 player: ${maxClapPlayer.name}');
 }
