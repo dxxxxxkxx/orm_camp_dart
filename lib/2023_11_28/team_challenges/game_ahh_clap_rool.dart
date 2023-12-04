@@ -1,5 +1,5 @@
 class Player {
-  String name = '';
+  final String name;
   int cntClap = 0;
 
   Player(this.name);
@@ -15,19 +15,13 @@ class AhhClapRool {
   int cntRool = 0;
 
   // 30의 배수 확인
-  bool checkAhh(int n) {
-    return n % 30 == 0 ? true : false;
-  }
+  bool checkAhh(int n) => (n % 30 == 0) ? true : false;
 
   // 3의 배수 확인
-  bool checkClap(int n) {
-    return n % 3 == 0 ? true : false;
-  }
+  bool checkClap(int n) => (n % 3 == 0) ? true : false;
 
   // 10의 배수 확인
-  bool checkRool(int n) {
-    return n % 10 == 0 ? true : false;
-  }
+  bool checkRool(int n) => (n % 10 == 0) ? true : false;
 
   String playGame(int n, Player player) {
     if (checkAhh(n)) {
