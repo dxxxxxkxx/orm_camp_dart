@@ -12,7 +12,9 @@ void main() {
     arithSeq[i] = arithSeq[i - 1] + commDiff;
   }
 
-  for (int i = 0; i < num; i++) {
+  for (int i = 0; i < num - 1; i++) {
     stdout.write('${arithSeq[i]} ');
   }
+
+  stdout.write('${arithSeq[num - 1]}');
 }
