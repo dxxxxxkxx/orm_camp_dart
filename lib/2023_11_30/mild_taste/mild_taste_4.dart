@@ -5,7 +5,7 @@ void main() {
   int commDiff = 10;
   int num = 10;
 
-  List<int> arithSeq = List.generate(num, (index) => 0);
+  List<int> arithSeq = List.generate(num, (index) => 0, growable: false);
   arithSeq[0] = firstTerm;
 
   for (int i = 1; i < num; i++) {
