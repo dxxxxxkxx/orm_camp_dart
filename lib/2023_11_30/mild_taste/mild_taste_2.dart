@@ -1,14 +1,8 @@
 void main() {
-  int m = 30;
-  int n = 15;
+  int m = 12;
+  int n = 40;
 
-  m %= 2;
-  n %= 2;
-
-  bool isChecked1 = (m == 0 && n == 1);
-  bool isChecked2 = (m == 1 && n == 0);
-
-  if (isChecked1 || isChecked2) {
+  if ((m + n) % 2 == 1) {
     print('YES');
   } else {
     print('NO');
