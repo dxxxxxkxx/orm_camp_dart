@@ -22,9 +22,8 @@ class Cleric {
     if (mp < maxMp && sec > 0) {
       recovMp = sec + Random().nextInt(3);
 
-      int totalMp = mp + recovMp;
-      if (totalMp > maxMp) {
-        recovMp = totalMp - maxMp;
+      if ((recovMp += mp) > maxMp) {
+        recovMp -= maxMp;
       }
     }
 
