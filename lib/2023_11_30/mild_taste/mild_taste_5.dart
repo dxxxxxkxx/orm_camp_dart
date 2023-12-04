@@ -10,5 +10,5 @@ void main() {
     }
   }
 
-  print(missCard ?? 'No missing cards');
+  print(missCard ?? 'No missing card');
 }
