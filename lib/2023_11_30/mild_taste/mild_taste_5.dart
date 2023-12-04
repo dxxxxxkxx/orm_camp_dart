@@ -6,6 +6,7 @@ void main() {
   for (int i = 0; i < cards.length; i++) {
     if (!collCards.contains(cards[i])) {
       missCard = cards[i];
+      break;
     }
   }
 
