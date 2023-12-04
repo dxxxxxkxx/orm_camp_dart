@@ -9,9 +9,9 @@ class Calculator {
   num multiply(num a, num b) => a * b;
 
   // 나누기
-  dynamic divide(num a, num b) {
+  String divide(num a, num b) {
     if (b != 0) {
-      return a / b;
+      return '${a / b}';
     } else {
       return 'Can\'t divide by 0';
     }
