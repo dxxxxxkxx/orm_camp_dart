@@ -55,7 +55,7 @@ void main() {
 
   // 게임 시작 (1 ~ 100)
   for (int i = 1; i <= 100; i++) {
-    Player currentPlayer = players[(i - 1) % players.length];
+    final Player currentPlayer = players[(i - 1) % players.length];
 
     // output 출력
     print('${currentPlayer.name}: ${ahhClapRool.playGame(i, currentPlayer)}');
