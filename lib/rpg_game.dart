@@ -1,5 +1,9 @@
 import 'dart:math';
 
+class Wand {}
+
+class Wizard {}
+
 class Cleric {
   String name;
   int hp = 50;
