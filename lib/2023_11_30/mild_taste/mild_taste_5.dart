@@ -1,5 +1,5 @@
 void main() {
-  List<int> cards = [1, 2, 3, 4, 5];
+  const List<int> cards = [1, 2, 3, 4, 5];
   List<int> collCards = [1, 3, 2, 5];
   int? missCard;
 

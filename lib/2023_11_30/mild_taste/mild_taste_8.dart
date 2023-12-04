@@ -1,6 +1,6 @@
 void main() {
-  String pepero = '11111';
-  final int requiredPepero = 11;
+  const String pepero = '11111';
+  const int requiredPepero = 11;
 
   if (pepero.length >= requiredPepero) {
     print('OK');

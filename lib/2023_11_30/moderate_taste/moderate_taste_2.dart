@@ -1,8 +1,9 @@
 import 'dart:io';
 
 void main() {
-  String input = stdin.readLineSync()!.trim().replaceAll(RegExp(r'\s+'), ' ');
-  List<int> abcd = input.split(' ').map((e) => int.parse(e)).toList();
+  final String input =
+      stdin.readLineSync()!.trim().replaceAll(RegExp(r'\s+'), ' ');
+  final List<int> abcd = input.split(' ').map((e) => int.parse(e)).toList();
 
   abcd.sort((prev, next) => next.compareTo(prev));
 

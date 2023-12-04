@@ -1,8 +1,10 @@
 import 'dart:io';
 
 void main() {
-  String input = stdin.readLineSync()!;
+  final String input = stdin.readLineSync()!;
 
+  // 정수가 양수이면 i는 1에서 시작
+  // 정수가 음수이면 i는 2에서 시작
   int i = (input[0] != '-') ? 1 : 2;
 
   while (i < input.length) {

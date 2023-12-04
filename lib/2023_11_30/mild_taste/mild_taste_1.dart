@@ -1,6 +1,6 @@
 void main() {
-  int a = 3;
-  int b = 4;
+  const int a = 3;
+  const int b = 4;
 
   if (a > b) {
     print(a);
