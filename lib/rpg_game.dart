@@ -17,18 +17,18 @@ class Cleric {
   }
 
   int pray(int sec) {
-    int recoveredMp = 0;
+    int recovMp = 0;
 
     if (mp < maxMp && sec > 0) {
-      recoveredMp = sec + Random().nextInt(3);
+      recovMp = sec + Random().nextInt(3);
 
-      int totalMp = mp + recoveredMp;
+      int totalMp = mp + recovMp;
       if (totalMp > maxMp) {
-        recoveredMp = totalMp - maxMp;
+        recovMp = totalMp - maxMp;
       }
     }
 
-    return recoveredMp;
+    return recovMp;
   }
 }
 
