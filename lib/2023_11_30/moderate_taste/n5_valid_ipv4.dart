@@ -8,7 +8,7 @@ void main() {
     ipv4s.add(stdin.readLineSync() ?? '');
   }
 
-  for (var ipv4 in ipv4s) {
+  for (final String ipv4 in ipv4s) {
     print(isValidIpv4(ipv4) ? 'True' : 'False');
   }
 }
