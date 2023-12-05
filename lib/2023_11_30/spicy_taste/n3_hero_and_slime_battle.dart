@@ -23,22 +23,22 @@ class Character {
 }
 
 class Hero extends Character {
-  Hero() : super(100, 10, 1);
+  Hero(super.health, super.attackValue, super.defenseValue);
 
   @override
   String showInfo() => 'Hero - ${super.showInfo()}';
 }
 
 class Slime extends Character {
-  Slime() : super(10, 5, 5);
+  Slime(super.health, super.attackValue, super.defenseValue);
 
   @override
   String showInfo() => 'Slime - ${super.showInfo()}';
 }
 
 class Game {
-  final Hero hero = Hero();
-  final Slime slime = Slime();
+  final Hero hero = Hero(100, 10, 1);
+  final Slime slime = Slime(10, 5, 5);
 
   void play() {
     while (true) {
