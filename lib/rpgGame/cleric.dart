@@ -1,15 +1,12 @@
 import 'dart:math';
 
-class Wand {}
-
-class Wizard {}
-
 class Cleric {
+  static const int maxHp = 50;
+  static const int maxMp = 10;
+
   String name;
   int hp;
   int mp;
-  static const int maxHp = 50;
-  static const int maxMp = 10;
 
   Cleric(this.name, {this.hp = Cleric.maxHp, this.mp = Cleric.maxMp});
 
@@ -34,5 +31,3 @@ class Cleric {
     return recovMp;
   }
 }
-
-void main() {}
