@@ -28,7 +28,7 @@ class VendingMachine {
     print('=====================');
   }
 
-  void buyProduct(Product product, int money) {
+  void buyProduct(final Product product, final int money) {
     // price 오름차순 정렬
     products.sort((prev, next) => prev.price.compareTo(next.price));
 

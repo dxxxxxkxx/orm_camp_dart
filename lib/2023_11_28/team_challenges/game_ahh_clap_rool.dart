@@ -1,8 +1,8 @@
 class Player {
   final String name;
-  int cntClap = 0;
+  int cntClap;
 
-  Player(this.name);
+  Player({required this.name, this.cntClap = 0});
 }
 
 class AhhClapRool {
@@ -15,15 +15,15 @@ class AhhClapRool {
   int cntRool = 0;
 
   // 30의 배수 확인
-  bool checkAhh(int n) => (n % 30 == 0) ? true : false;
+  bool checkAhh(final int n) => (n % 30 == 0) ? true : false;
 
   // 3의 배수 확인
-  bool checkClap(int n) => (n % 3 == 0) ? true : false;
+  bool checkClap(final int n) => (n % 3 == 0) ? true : false;
 
   // 10의 배수 확인
-  bool checkRool(int n) => (n % 10 == 0) ? true : false;
+  bool checkRool(final int n) => (n % 10 == 0) ? true : false;
 
-  String playGame(int n, Player player) {
+  String playGame(final int n, final Player player) {
     if (checkAhh(n)) {
       // 우선 순위 1
       cntAhh++;
@@ -45,10 +45,10 @@ class AhhClapRool {
 
 void main() {
   final List<Player> players = [
-    Player('Player 1'),
-    Player('Player 2'),
-    Player('Player 3'),
-    Player('Player 4')
+    Player(name: 'Player 1'),
+    Player(name: 'Player 2'),
+    Player(name: 'Player 3'),
+    Player(name: 'Player 4')
   ];
 
   final AhhClapRool ahhClapRool = AhhClapRool();

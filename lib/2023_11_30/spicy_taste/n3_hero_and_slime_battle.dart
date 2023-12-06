@@ -3,12 +3,16 @@ class Character {
   final int attackValue;
   final int defenseValue;
 
-  Character(this.health, this.attackValue, this.defenseValue);
+  Character({
+    required this.health,
+    required this.attackValue,
+    required this.defenseValue,
+  });
 
   String showInfo() =>
       'Health: $health, Attack: $attackValue, Defense: $defenseValue';
 
-  int attack(Character target) {
+  int attack(final Character target) {
     int damage = attackValue - target.defenseValue;
 
     if (target.health < damage) {
@@ -23,22 +27,30 @@ class Character {
 }
 
 class Hero extends Character {
-  Hero(super.health, super.attackValue, super.defenseValue);
+  Hero({
+    required super.health,
+    required super.attackValue,
+    required super.defenseValue,
+  });
 
   @override
   String showInfo() => 'Hero - ${super.showInfo()}';
 }
 
 class Slime extends Character {
-  Slime(super.health, super.attackValue, super.defenseValue);
+  Slime({
+    required super.health,
+    required super.attackValue,
+    required super.defenseValue,
+  });
 
   @override
   String showInfo() => 'Slime - ${super.showInfo()}';
 }
 
 class Game {
-  final Hero hero = Hero(100, 10, 1);
-  final Slime slime = Slime(10, 5, 5);
+  final Hero hero = Hero(health: 100, attackValue: 10, defenseValue: 1);
+  final Slime slime = Slime(health: 10, attackValue: 5, defenseValue: 5);
 
   void play() {
     while (true) {
@@ -57,7 +69,7 @@ class Game {
         break;
       }
 
-      print('');
+      print(''); // enter
     }
   }
 }
