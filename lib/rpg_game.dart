@@ -6,28 +6,28 @@ class Wizard {}
 
 class Cleric {
   String name;
-  int hp = 50;
-  int mp = 10;
+  int hp;
+  int mp;
   static const int maxHp = 50;
   static const int maxMp = 10;
 
-  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
+  Cleric(this.name, {this.hp = Cleric.maxHp, this.mp = Cleric.maxMp});
 
   void selfAid() {
-    if (mp >= 5 && hp < maxHp) {
+    if (mp >= 5 && hp < Cleric.maxHp) {
       mp -= 5;
-      hp = maxHp;
+      hp = Cleric.maxHp;
     }
   }
 
   int pray(int sec) {
     int recovMp = 0;
 
-    if (mp < maxMp && sec > 0) {
+    if (mp < Cleric.maxMp && sec > 0) {
       recovMp = sec + Random().nextInt(3);
 
-      if ((recovMp += mp) > maxMp) {
-        recovMp -= maxMp;
+      if ((recovMp += mp) > Cleric.maxMp) {
+        recovMp -= Cleric.maxMp;
       }
     }
 
