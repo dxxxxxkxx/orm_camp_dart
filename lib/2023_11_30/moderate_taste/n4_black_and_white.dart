@@ -9,7 +9,9 @@ void main() {
   final int w = hw[1]; // width
 
   final List<List<int>> image = List.generate(
-      h, (index) => List.generate(w, (index) => 0, growable: false),
+      h,
+      (final int index) =>
+          List.generate(w, (final int index) => 0, growable: false),
       growable: false);
 
   for (int i = 0; i < h; i++) {

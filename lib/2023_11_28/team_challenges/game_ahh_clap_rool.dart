@@ -23,7 +23,7 @@ class AhhClapRool {
   // 10의 배수 확인
   bool checkRool(final int n) => (n % 10 == 0) ? true : false;
 
-  String playGame(final int n, final Player player) {
+  String playGame(final int n, {required final Player player}) {
     if (checkAhh(n)) {
       // 우선 순위 1
       cntAhh++;
@@ -58,7 +58,8 @@ void main() {
     final Player currentPlayer = players[(i - 1) % players.length];
 
     // output 출력
-    print('${currentPlayer.name}: ${ahhClapRool.playGame(i, currentPlayer)}');
+    print(
+        '${currentPlayer.name}: ${ahhClapRool.playGame(i, player: currentPlayer)}');
   }
   // 게임 끝
 

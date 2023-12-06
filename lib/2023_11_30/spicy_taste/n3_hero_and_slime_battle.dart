@@ -12,7 +12,7 @@ class Character {
   String showInfo() =>
       'Health: $health, Attack: $attackValue, Defense: $defenseValue';
 
-  int attack(final Character target) {
+  int attack({required final Character target}) {
     int damage = attackValue - target.defenseValue;
 
     if (target.health < damage) {
@@ -57,13 +57,13 @@ class Game {
       print(hero.showInfo());
       print(slime.showInfo());
 
-      print('Slime attacked! Hero took ${slime.attack(hero)} damage.');
+      print('Slime attacked! Hero took ${slime.attack(target: hero)} damage.');
       if (hero.isDead()) {
         print('\nHero is defeated! Slime wins!');
         break;
       }
 
-      print('Hero attacked! Slime took ${hero.attack(slime)} damage.');
+      print('Hero attacked! Slime took ${hero.attack(target: slime)} damage.');
       if (slime.isDead()) {
         print('\nSlime lost! Hero won!');
         break;

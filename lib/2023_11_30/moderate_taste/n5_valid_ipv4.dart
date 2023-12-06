@@ -13,7 +13,7 @@ void main() {
   }
 }
 
-bool isValidIpv4(String input) {
+bool isValidIpv4(final String input) {
   /*
   * [0-1]?[0-9]{1,2} → 0 ~ 199
   * 2[0-4][0-9] → 200 ~ 249

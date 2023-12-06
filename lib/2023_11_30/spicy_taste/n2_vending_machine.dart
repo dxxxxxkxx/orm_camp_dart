@@ -13,9 +13,7 @@ class Product {
 class VendingMachine {
   final List<Product> products;
 
-  const VendingMachine({
-    required this.products,
-  });
+  const VendingMachine({required this.products});
 
   void showInfo() {
     print('===== 자판기 상태 =====');
@@ -28,9 +26,10 @@ class VendingMachine {
     print('=====================');
   }
 
-  void buyProduct(final Product product, final int money) {
+  void buyProduct({required final Product product, required final int money}) {
     // price 오름차순 정렬
-    products.sort((prev, next) => prev.price.compareTo(next.price));
+    products.sort((final Product prev, final Product next) =>
+        prev.price.compareTo(next.price));
 
     for (int i = 0; i < products.length; i++) {
       if ((products[i].inventory > 0) && (products[i].price <= money)) {
@@ -58,6 +57,6 @@ void main() {
       VendingMachine(products: [chocolate, pepero, fanta, cider]);
 
   vendingMachine.showInfo();
-  vendingMachine.buyProduct(pepero, 5000);
+  vendingMachine.buyProduct(product: pepero, money: 5000);
   vendingMachine.showInfo();
 }
