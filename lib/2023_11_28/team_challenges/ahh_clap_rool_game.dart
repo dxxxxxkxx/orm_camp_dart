@@ -5,7 +5,7 @@ class Player {
   Player({required this.name, this.cntClap = 0});
 }
 
-class AhhClapRool {
+class Game {
   // Ahh: 30의 배수 (우선 순위 1)
   // Clap: 3의 배수 (우선 순위 2)
   // Rool: 10의 배수 (우선 순위 3)
@@ -23,7 +23,7 @@ class AhhClapRool {
   // 10의 배수 확인
   bool checkRool(final int n) => (n % 10 == 0) ? true : false;
 
-  String playGame(final int n, {required final Player player}) {
+  String play(final int n, {required final Player player}) {
     if (checkAhh(n)) {
       // 우선 순위 1
       cntAhh++;
@@ -51,7 +51,7 @@ void main() {
     Player(name: 'Player 4')
   ];
 
-  final AhhClapRool ahhClapRool = AhhClapRool();
+  final Game ahhClapRool = Game();
 
   // 게임 시작 (1 ~ 100)
   for (int i = 1; i <= 100; i++) {
@@ -59,7 +59,7 @@ void main() {
 
     // output 출력
     print(
-        '${currentPlayer.name}: ${ahhClapRool.playGame(i, player: currentPlayer)}');
+        '${currentPlayer.name}: ${ahhClapRool.play(i, player: currentPlayer)}');
   }
   // 게임 끝
 
@@ -73,7 +73,8 @@ void main() {
     print('${player.name}: ${player.cntClap}');
   }
 
-  final Player maxClapPlayer =
-      players.reduce((prev, next) => prev.cntClap > next.cntClap ? prev : next);
+  final Player maxClapPlayer = players.reduce(
+      (final Player prev, final Player next) =>
+          prev.cntClap > next.cntClap ? prev : next);
   print('\n* 가장 많은 clap을 출력한 player: ${maxClapPlayer.name}');
 }

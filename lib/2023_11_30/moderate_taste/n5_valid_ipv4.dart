@@ -2,13 +2,13 @@ import 'dart:io';
 
 void main() {
   final int m = int.parse(stdin.readLineSync()!);
-  final List<String> ipv4s = [];
+  final List<String> ipv4List = [];
 
   for (int i = 0; i < m; i++) {
-    ipv4s.add(stdin.readLineSync() ?? '');
+    ipv4List.add(stdin.readLineSync() ?? '');
   }
 
-  for (final String ipv4 in ipv4s) {
+  for (final String ipv4 in ipv4List) {
     print(isValidIpv4(ipv4) ? 'True' : 'False');
   }
 }
