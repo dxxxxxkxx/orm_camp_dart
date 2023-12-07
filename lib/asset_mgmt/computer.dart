@@ -10,9 +10,4 @@ class Computer extends TangibleAsset {
     required super.weight,
     required this.maker,
   });
-
-  @override
-  set weight(double weight) {
-    super.weight = weight;
-  }
 }
