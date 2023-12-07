@@ -17,7 +17,7 @@ class Cleric {
     }
   }
 
-  int pray(int sec) {
+  int pray({required final int sec}) {
     int recovMp = 0;
 
     if (mp < Cleric.maxMp && sec > 0) {
