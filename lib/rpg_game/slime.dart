@@ -1,6 +1,5 @@
-import 'validator.dart';
-
 import 'hero.dart';
+import 'validator.dart';
 
 class Slime {
   String suffix;
