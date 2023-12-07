@@ -1,16 +1,24 @@
+import 'package:orm_camp_dart/rpgGame/validator.dart';
+
 import 'hero.dart';
 
 class Slime {
-  final String suffix;
-  int hp;
+  String suffix;
+  int _hp;
 
-  Slime({required this.suffix}) : hp = 50;
+  Slime({required this.suffix}) : _hp = setHp(50);
 
   void attack(final Hero hero) {
-    print('슬라임$suffix의 공격: 데미지 10');
+    print('슬라임$suffix 공격: 데미지 10');
 
     if ((hero.hp -= 10) < 0) {
       hero.hp = 0;
     }
+  }
+
+  int get hp => _hp;
+
+  set hp(final int hp) {
+    _hp = setHp(hp);
   }
 }
