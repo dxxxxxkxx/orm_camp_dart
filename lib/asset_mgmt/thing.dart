@@ -1,5 +1,5 @@
 abstract interface class Thing {
-  double getWeight({required final Object object});
+  double get weight;
 
-  void setWeight({required final Object object});
+  set weight(double weight);
 }
