@@ -2,7 +2,7 @@ class Wand {
   String _name;
   double _power;
 
-  Wand({required String name, required double power})
+  Wand({required final String name, required final double power})
       : _name = name,
         _power = power {
     _validateName(_name);
