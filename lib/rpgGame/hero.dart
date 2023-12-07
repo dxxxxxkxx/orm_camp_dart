@@ -1,4 +1,4 @@
-import 'package:orm_camp_dart/rpgGame/validator.dart';
+import 'validator.dart';
 
 class Hero {
   String _name;
