@@ -1,7 +1,5 @@
 /*
-  1. a()
-  2. Aa
-     Ba
+  1. Y
  */
 
 abstract interface class X {
@@ -45,11 +43,9 @@ class B extends Y {
 }
 
 void main() {
-  X obj = A();
-  obj.a();
+  List<Y> ab = [A(), B()];
 
-  Y y1 = A();
-  Y y2 = B();
-  y1.a();
-  y2.a();
+  for (final Y y in ab) {
+    y.b();
+  }
 }
