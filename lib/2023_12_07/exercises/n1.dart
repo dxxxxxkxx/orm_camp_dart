@@ -15,7 +15,9 @@ class Book {
       other is Book &&
           runtimeType == other.runtimeType &&
           title == other.title &&
-          publishDate == other.publishDate;
+          publishDate.year == other.publishDate.year &&
+          publishDate.month == other.publishDate.month &&
+          publishDate.day == other.publishDate.day;
 
   @override
   int get hashCode => title.hashCode ^ publishDate.hashCode;
@@ -39,10 +41,9 @@ class Book {
 }
 
 void main() {
-  final DateTime now = DateTime.now();
-  final DateTime yesterday = DateTime(now.year, now.month, now.day - 1);
-  final DateTime today = DateTime(now.year, now.month, now.day);
-  final DateTime tomorrow = DateTime(now.year, now.month, now.day + 1);
+  final DateTime today = DateTime.now();
+  final DateTime yesterday = today.subtract(Duration(days: 1));
+  final DateTime tomorrow = today.add(Duration(days: 1));
 
   final Book book1 =
       Book(title: 'Book1', publishDate: today, comment: 'comment1');
