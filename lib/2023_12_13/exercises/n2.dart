@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 Future<String> getMovieInfo() async {
-  await Future.delayed(Duration(seconds: 2));
+  await Future.delayed(const Duration(seconds: 2));
   final Map<String, dynamic> mockData = {
     'title': 'Star Wars',
     'director': 'George Lucas',

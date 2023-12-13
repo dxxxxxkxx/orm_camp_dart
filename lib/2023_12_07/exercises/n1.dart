@@ -42,8 +42,8 @@ class Book {
 
 void main() {
   final DateTime today = DateTime.now();
-  final DateTime yesterday = today.subtract(Duration(days: 1));
-  final DateTime tomorrow = today.add(Duration(days: 1));
+  final DateTime yesterday = today.subtract(const Duration(days: 1));
+  final DateTime tomorrow = today.add(const Duration(days: 1));
 
   final Book book1 =
       Book(title: 'Book1', publishDate: today, comment: 'comment1');
