@@ -27,7 +27,7 @@ void main() async {
     }
 
     if (await outputFile.exists()) {
-      print('Successfully done');
+      print('Success');
     } else {
       print('Write-file not found');
     }
