@@ -4,11 +4,18 @@ import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 
 Future<Uint8List> downloadImage({required final String path}) async {
+  Uint8List image;
   final Stopwatch stopwatch = Stopwatch();
 
   print('다운로드 시작');
   stopwatch.start();
-  final Uint8List image = await http.readBytes(Uri.parse(path));
+  try {
+    image = await http.readBytes(Uri.parse(path));
+  } catch (e) {
+    print(e);
+    print('* 기본 이미지 다운로드');
+    image = await File('assets/images/no_image.png').readAsBytes();
+  }
   final Duration downloadTime = stopwatch.elapsed;
   print('다운로드 끝');
 
