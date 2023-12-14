@@ -4,7 +4,19 @@ import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 
 Future<Uint8List> downloadImage({required final String path}) async {
-  return await http.readBytes(Uri.parse(path));
+  final Stopwatch stopwatch = Stopwatch();
+
+  print('다운로드 시작');
+  stopwatch.start();
+  final Uint8List image = await http.readBytes(Uri.parse(path));
+  final Duration downloadTime = stopwatch.elapsed;
+  print('다운로드 끝');
+
+  print('===========');
+  print('소요 시간: $downloadTime');
+  print('용량: ${image.length}bytes');
+
+  return image;
 }
 
 Future<File> saveFile({
@@ -21,6 +33,7 @@ void main() async {
   final File outputFile =
       await saveFile(bytes: imageBytes, fileName: 'icon.ico');
 
+  print('');
   if (await outputFile.exists()) {
     print('Success');
   } else {
