@@ -2,18 +2,36 @@ import 'dart:io';
 
 void main() async {
   final File inputFile = File('lib/2023_12_13/exercises/sample.csv');
-  final File outputFile = File('lib/2023_12_13/exercises/sample_copy.csv');
 
-  String text = await inputFile
-      .readAsString()
-      .catchError((e) => throw Exception('Reading file error'));
-  const String srchStr = '한석봉';
+  if (await inputFile.exists()) {
+    // read file
+    String text = '';
+    try {
+      text = await inputFile.readAsString();
+    } catch (e) {
+      print(e);
+    }
 
-  if (text.contains(srchStr)) {
-    text = text.replaceAll(srchStr, '김석봉');
+    // replace text
+    const String searchStr = '한석봉';
+    if (text.contains(searchStr)) {
+      text = text.replaceAll(searchStr, '김석봉');
+    }
+
+    // write file
+    final File outputFile = File('lib/2023_12_13/exercises/sample_copy.csv');
+    try {
+      await outputFile.writeAsString(text);
+    } catch (e) {
+      print(e);
+    }
+
+    if (await outputFile.exists()) {
+      print('Successfully done');
+    } else {
+      print('Write-file not found');
+    }
+  } else {
+    print('Read-file not found');
   }
-
-  await outputFile
-      .writeAsString(text)
-      .catchError((e) => throw Exception('Writing file error'));
 }
