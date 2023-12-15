@@ -29,8 +29,10 @@ void main() async {
   // asynchronous
   stopwatch.reset();
   stopwatch.start();
-  for (int i = 0; i < 3; i++) {
-    downloadImage(path: 'https://alimipro.com/favicon.ico');
-  }
+  List<Future<Uint8List>> list = List.generate(
+      3,
+      (final int index) =>
+          downloadImage(path: 'https://alimipro.com/favicon.ico'));
+  await Future.wait(list);
   print('[Asynchronous] ${stopwatch.elapsed}');
 }
