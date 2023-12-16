@@ -1,12 +1,12 @@
 class Product {
   final String name;
   final int price;
-  int inventory;
+  int stock;
 
   Product({
     required this.name,
     required this.price,
-    this.inventory = 5,
+    this.stock = 5,
   });
 }
 
@@ -20,7 +20,7 @@ class VendingMachine {
 
     for (final Product product in products) {
       print(
-          '${product.name} - 가격: ${product.price}원, 수량: ${product.inventory}개');
+          '${product.name} - 가격: ${product.price}원, 수량: ${product.stock}개');
     }
 
     print('=====================');
@@ -32,11 +32,11 @@ class VendingMachine {
         prev.price.compareTo(next.price));
 
     for (int i = 0; i < products.length; i++) {
-      if ((products[i].inventory > 0) && (products[i].price <= money)) {
-        if ((product.inventory > 0) && (product.price <= money)) {
-          product.inventory--;
+      if ((products[i].stock > 0) && (products[i].price <= money)) {
+        if ((product.stock > 0) && (product.price <= money)) {
+          product.stock--;
           print(
-              '[${product.name} 구매 성공] 가격: ${product.price}원, 거스름돈: ${money - product.price}원, 남은 수량: ${product.inventory}개');
+              '[${product.name} 구매 성공] 가격: ${product.price}원, 거스름돈: ${money - product.price}원, 남은 수량: ${product.stock}개');
         } else {
           print('구매 실패');
         }
