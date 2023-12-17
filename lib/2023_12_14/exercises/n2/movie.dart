@@ -36,7 +36,7 @@ class Movie {
   const Movie({
     required this.adult,
     required this.backdropPath,
-    required this.belongsToCollection,
+    this.belongsToCollection,
     required this.budget,
     required this.genres,
     required this.homepage,

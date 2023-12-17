@@ -18,7 +18,7 @@ class Result {
 
   const Result({
     required this.adult,
-    required this.backdropPath,
+    this.backdropPath,
     required this.genreIds,
     required this.id,
     required this.originalLanguage,
