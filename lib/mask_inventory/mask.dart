@@ -7,7 +7,7 @@ class Mask {
   const Mask({this.count, this.stores});
 
   Mask.fromJson(Map<String, dynamic> json)
-      : count = json['count'] as int,
+      : count = int.tryParse(json['count']?.toString() ?? ''),
         stores = (json['stores'] != null)
             ? (json['stores'] as List<dynamic>)
                 .map((final dynamic store) =>
@@ -16,7 +16,7 @@ class Mask {
             : null;
 
   Map<String, dynamic> toJson() => {
-        'count': count,
+        'count': count ?? '',
         'stores': stores?.map((final Store store) => store.toJson()).toList()
       };
 }
