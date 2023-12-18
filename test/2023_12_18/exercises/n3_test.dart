@@ -6,6 +6,9 @@ void main() {
     expect(findMax(intList: [2, 5, 1, 9, 3]), 9);
     expect(findMax(intList: [0, -5, -1, -2, 0]), 0);
     expect(findMax(intList: [10]), 10);
+  });
+
+  test('Empty list test', () {
     expect(findMax(intList: []), null);
   });
 }
