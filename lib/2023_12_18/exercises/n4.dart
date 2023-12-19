@@ -1,3 +1,2 @@
-String? reverseString({required final String str}) {
-  return str.split('').reversed.join();
-}
+String? reverseString({required final String str}) =>
+    str.split('').reversed.join();
