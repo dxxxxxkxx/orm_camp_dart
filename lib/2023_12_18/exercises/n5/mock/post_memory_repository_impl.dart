@@ -33,10 +33,14 @@ class PostMemoryRepositoryImpl implements PostRepository {
     final List<Post?> postList;
 
     if (jsonString != null && jsonString.isNotEmpty) {
-      postList = (jsonDecode(jsonString) as List<dynamic>)
-          .map((final dynamic post) =>
-              Post.fromJson(post as Map<String, dynamic>))
-          .toList();
+      try {
+        postList = (jsonDecode(jsonString) as List<dynamic>)
+            .map((final dynamic post) =>
+                Post.fromJson(post as Map<String, dynamic>))
+            .toList();
+      } catch (e) {
+        throw Exception('Can\'t decode json.');
+      }
     } else {
       postList = [];
     }

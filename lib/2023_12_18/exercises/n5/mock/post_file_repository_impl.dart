@@ -37,16 +37,20 @@ class PostFileRepositoryImpl implements PostRepository {
       final String jsonString = await _jsonFile.readAsString();
       final List<Post?> postList;
 
-      if (jsonString.isNotEmpty && jsonString != '\'\'') {
-        postList = (jsonDecode(jsonString) as List<dynamic>)
-            .map((final dynamic post) =>
-                Post.fromJson(post as Map<String, dynamic>))
-            .toList();
-      } else {
-        postList = [];
-      }
+      try {
+        if (jsonString.isNotEmpty && jsonString != '\'\'') {
+          postList = (jsonDecode(jsonString) as List<dynamic>)
+              .map((final dynamic post) =>
+                  Post.fromJson(post as Map<String, dynamic>))
+              .toList();
+        } else {
+          postList = [];
+        }
 
-      return postList;
+        return postList;
+      } catch (e) {
+        throw Exception('Can\'t decode json.');
+      }
     } else {
       throw Exception('No such file to read');
     }
