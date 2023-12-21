@@ -16,6 +16,7 @@ class PostMemoryRepositoryImpl implements PostRepository {
 
   Future<void> _initPosts() async {
     _posts = await getPosts();
+    await Future.delayed(const Duration(milliseconds: 500));
   }
 
   Future<void> _savePosts() async {
@@ -61,7 +62,7 @@ class PostMemoryRepositoryImpl implements PostRepository {
     }
 
     _posts.add(post);
-    _savePosts();
+    await _savePosts();
   }
 
   @override
@@ -73,7 +74,7 @@ class PostMemoryRepositoryImpl implements PostRepository {
 
     if (userPost != null) {
       _posts.remove(userPost);
-      _savePosts();
+      await _savePosts();
     } else {
       print('No such post to delete.');
     }
@@ -89,7 +90,7 @@ class PostMemoryRepositoryImpl implements PostRepository {
     if (userPost != null) {
       userPost.title = post.title;
       userPost.body = post.body;
-      _savePosts();
+      await _savePosts();
     } else {
       print('No such post to update.');
     }
