@@ -104,3 +104,18 @@ class PostFileRepositoryImpl implements PostRepository {
     }
   }
 }
+
+void main() async {
+  PostFileRepositoryImpl tmp = PostFileRepositoryImpl();
+  print(await tmp.getPosts());
+
+  await tmp.addPost(Post(userId: 3, title: 'title3', body: 'body3'));
+  print(await tmp.getPosts());
+
+  await tmp.deletePost(Post(index: 1, userId: 1));
+  print(await tmp.getPosts());
+
+  await tmp
+      .updatePost(Post(index: 2, userId: 2, title: 'title4', body: 'body4'));
+  print(await tmp.getPosts());
+}
