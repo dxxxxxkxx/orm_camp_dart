@@ -16,7 +16,6 @@ class PostFileRepositoryImpl implements PostRepository {
 
   Future<void> _initPosts() async {
     _posts = await getPosts();
-    await Future.delayed(const Duration(milliseconds: 500));
   }
 
   Future<void> _savePosts() async {
