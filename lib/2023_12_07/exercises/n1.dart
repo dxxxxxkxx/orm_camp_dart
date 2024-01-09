@@ -11,7 +11,7 @@ class Book {
 
   @override
   String toString() =>
-      'Book{ title: $title, publishDate: $publishDate, comment: $comment }';
+      'Book { title: $title, publishDate: $publishDate, comment: $comment }';
 
   @override
   bool operator ==(Object other) =>

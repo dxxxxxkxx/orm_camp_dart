@@ -17,7 +17,7 @@ class Post {
 
   @override
   String toString() =>
-      'Post{ index: $index, userId: $userId, title: $title, body: $body }';
+      'Post { index: $index, userId: $userId, title: $title, body: $body }';
 
   @override
   bool operator ==(Object other) =>
