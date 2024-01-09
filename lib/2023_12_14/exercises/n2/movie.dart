@@ -69,8 +69,7 @@ class Movie {
             : null,
         budget = json['budget'] as int,
         genres = (json['genres'] as List<dynamic>)
-            .map((final dynamic genre) =>
-                Genre.fromJson(genre as Map<String, dynamic>))
+            .map((final dynamic genre) => Genre.fromJson(genre))
             .toList(),
         homepage = json['homepage'] as String,
         id = json['id'] as int,
@@ -82,20 +81,18 @@ class Movie {
         posterPath = json['poster_path'] as String,
         productionCompanies = (json['production_companies'] as List<dynamic>)
             .map((final dynamic productionCompany) =>
-                ProductionCompany.fromJson(
-                    productionCompany as Map<String, dynamic>))
+                ProductionCompany.fromJson(productionCompany))
             .toList(),
         productionCountries = (json['production_countries'] as List<dynamic>)
             .map((final dynamic productionCountry) =>
-                ProductionCountry.fromJson(
-                    productionCountry as Map<String, dynamic>))
+                ProductionCountry.fromJson(productionCountry))
             .toList(),
         releaseDate = DateTime.parse(json['release_date'] as String),
         revenue = json['revenue'] as int,
         runtime = json['runtime'] as int,
         spokenLanguages = (json['spoken_languages'] as List<dynamic>)
             .map((final dynamic spokenLanguage) =>
-                SpokenLanguage.fromJson(spokenLanguage as Map<String, dynamic>))
+                SpokenLanguage.fromJson(spokenLanguage))
             .toList(),
         status = json['status'] as String,
         tagline = json['tagline'] as String,

@@ -2,7 +2,7 @@ class Player {
   final String name;
   int cntClap;
 
-  Player({required this.name, this.cntClap = 0});
+  Player({required this.name}) : cntClap = 0;
 }
 
 class Game {

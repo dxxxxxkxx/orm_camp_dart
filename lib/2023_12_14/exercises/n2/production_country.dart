@@ -2,10 +2,7 @@ class ProductionCountry {
   final String iso_3166_1;
   final String name;
 
-  const ProductionCountry({
-    required this.iso_3166_1,
-    required this.name,
-  });
+  const ProductionCountry({required this.iso_3166_1, required this.name});
 
   ProductionCountry.fromJson(Map<String, dynamic> json)
       : iso_3166_1 = json['iso_3166_1'] as String,

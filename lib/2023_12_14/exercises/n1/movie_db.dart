@@ -20,8 +20,7 @@ class MovieDb {
       : dates = Dates.fromJson(json['dates']),
         page = json['page'] as int,
         results = (json['results'] as List<dynamic>)
-            .map((final dynamic result) =>
-                Result.fromJson(result as Map<String, dynamic>))
+            .map((final dynamic result) => Result.fromJson(result))
             .toList(),
         totalPages = json['total_pages'] as int,
         totalResults = json['total_results'] as int;

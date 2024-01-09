@@ -10,8 +10,7 @@ class Mask {
       : count = int.tryParse(json['count']?.toString() ?? ''),
         stores = (json['stores'] != null)
             ? (json['stores'] as List<dynamic>)
-                .map((final dynamic store) =>
-                    Store.fromJson(store as Map<String, dynamic>))
+                .map((final dynamic store) => Store.fromJson(store))
                 .toList()
             : null;
 

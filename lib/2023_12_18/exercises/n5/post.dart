@@ -16,6 +16,10 @@ class Post {
       {'id': index, 'userId': userId, 'title': title, 'body': body};
 
   @override
+  String toString() =>
+      'Post{ index: $index, userId: $userId, title: $title, body: $body }';
+
+  @override
   bool operator ==(Object other) =>
       other is Post &&
       runtimeType == other.runtimeType &&
@@ -28,17 +32,7 @@ class Post {
   int get hashCode =>
       index.hashCode ^ userId.hashCode ^ title.hashCode ^ body.hashCode;
 
-  @override
-  String toString() =>
-      'Post{ index: $index, userId: $userId, title: $title, body: $body}';
-
-  Post copyWith({
-    int? index,
-    int? userId,
-    String? title,
-    String? body,
-  }) =>
-      Post(
+  Post copyWith({int? index, int? userId, String? title, String? body}) => Post(
         index: index ?? this.index,
         userId: userId ?? this.userId,
         title: title ?? this.title,

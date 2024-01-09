@@ -10,34 +10,31 @@ class Book {
   });
 
   @override
-  bool operator ==(final Object other) =>
+  String toString() =>
+      'Book{ title: $title, publishDate: $publishDate, comment: $comment }';
+
+  @override
+  bool operator ==(Object other) =>
       identical(this, other) ||
       other is Book &&
           runtimeType == other.runtimeType &&
           title == other.title &&
-          publishDate.year == other.publishDate.year &&
-          publishDate.month == other.publishDate.month &&
-          publishDate.day == other.publishDate.day;
+          publishDate == other.publishDate &&
+          comment == other.comment;
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode => title.hashCode ^ publishDate.hashCode ^ comment.hashCode;
 
   Book copyWith({
     String? title,
     DateTime? publishDate,
     String? comment,
-  }) {
-    return Book(
-      title: title ?? this.title,
-      publishDate: publishDate ?? this.publishDate,
-      comment: comment ?? this.comment,
-    );
-  }
-
-  @override
-  String toString() {
-    return 'Book{title: $title, publishDate: $publishDate, comment: $comment}';
-  }
+  }) =>
+      Book(
+        title: title ?? this.title,
+        publishDate: publishDate ?? this.publishDate,
+        comment: comment ?? this.comment,
+      );
 }
 
 void main() {
